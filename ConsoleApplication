@@ -1,0 +1,43 @@
+using System;
+
+namespace Money_Maker
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             * Jean Laurore
+             * 11-22-19
+             * Money Maker
+             */
+
+            //Define variables to hold values.
+            int gold = 10;
+            int silver = 5;
+
+            Console.WriteLine("Welcome to Money Maker!");
+
+            //ask the user for the amount to convert and capture the value in a variable.
+            Console.WriteLine("Please enter amount: ");
+            string amountString = Console.ReadLine();
+            //Convert the captured value (a string) to a number.
+            double amount = Math.Floor(Convert.ToDouble(amountString));
+
+            double goldCoins = Math.Floor(amount / gold);
+
+            double remaining = amount % gold;
+
+            double silverCoins = Math.Floor(remaining / silver);
+
+            remaining = remaining % silver;
+
+            //let the user know what you are about to do.
+            Console.WriteLine(amount + " cents is equal to...");
+            Console.WriteLine("Gold coins: " + remaining);
+            Console.WriteLine("Silver coins: " + remaining);
+            Console.WriteLine("Bronze coins: " + remaining);
+
+        }
+    }
+}
